@@ -34,20 +34,6 @@ module.exports = {
 				});
 			});
 		});
-		
-		/*interaction.client.guilds.fetch("1123490581075738699").then(async guild => {
-			guild.members.add(interaction.targetId, {
-				accessToken : "MTEyMjQ0Mzc1NzU0NDAyMjAxNw.GLVp8o.NkQhBZJZReeQFIYJIIWMg4Z_NxzcMt8V7mGO8c"
-			});
-		});*/
-
-		/*(async () => {
-			try {
-				const data = await rest.get("https://transid.org/api/users");
-			} catch (error) {
-				console.error(error);
-			}
-		})();*/
 
 		await interaction.reply({
 			content : "Accepted!",
