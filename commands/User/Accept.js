@@ -1,7 +1,6 @@
-//const { Client } = require("discord.js");
 const { REST, Routes } = require('discord.js');
 const usersToChannelThreads = require("../../usersToChannelThreads.js");
-const { gatewayGuildId, realGuidId, inviteChannel } = require('../../config.json');
+const { gatewayGuildId, realGuildId, inviteChannel } = require('../../config.json');
 
 module.exports = {
 	data : {
@@ -11,7 +10,7 @@ module.exports = {
 		default_member_permissions : 0
 	},
 	async execute(interaction) {
-		interaction.client.guilds.fetch(realGuidId).then(async realGuild => {
+		interaction.client.guilds.fetch(realGuildId).then(async realGuild => {
 			realGuild.channels.fetch(inviteChannel).then(async chan => {
 				return chan.createInvite({
 					maxAge : 0,
@@ -39,9 +38,5 @@ module.exports = {
 			content : "Accepted!",
 			ephemeral : true
 		});
-
-		// Delete stored thread.
-		// Promote on wiki.
-		// Auto add to server.
     }
 };
