@@ -20,8 +20,5 @@ module.exports = {
                 });
             });
         }
-
-        // start thread and fill in message and send
-        // store user ID with thread ID
 	}
 };

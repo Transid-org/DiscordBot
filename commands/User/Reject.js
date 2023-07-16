@@ -1,5 +1,5 @@
 const { Client } = require("discord.js");
-const { gatewayGuildId, realGuidId } = require('../../config.json');
+const { gatewayGuildId, realGuildId } = require('../../config.json');
 
 module.exports = {
 	data : {
@@ -12,7 +12,7 @@ module.exports = {
 		interaction.client.guilds.fetch(gatewayGuildId).then(async guild => {
 			guild.members.ban(interaction.targetId, "Rejected.");
 		});
-		interaction.client.guilds.fetch(realGuidId).then(async guild => {
+		interaction.client.guilds.fetch(realGuildId).then(async guild => {
 			guild.members.ban(interaction.targetId, "Rejected.");
 		});
 
@@ -20,7 +20,5 @@ module.exports = {
 			content : "Rejected.",
 			ephemeral : true
 		});
-		
-		// Delete stored thread and store email for future rejection protection.
     }
 };
